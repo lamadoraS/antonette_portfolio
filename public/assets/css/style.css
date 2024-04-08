@@ -9,6 +9,12 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+/* Existing CSS */
+
+/*--------------------------------------------------------------
+# Responsive Media Queries
+--------------------------------------------------------------*/
+
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -391,6 +397,8 @@ section {
   padding: 60px 0;
 }
 
+
+
 .section-bg {
   background-image: linear-gradient(135deg, #FFD9E2, #FFB6C1, #E76F8C, #BD3381, #000000);
 }
@@ -475,12 +483,22 @@ section {
 # About
 --------------------------------------------------------------*/
 .container.border {
-  border: 1px solid #343a40; /* Example border color */
-  background: linear-gradient(135deg, #F2EFE5, #e9ecef); /* Example linear gradient */
+  border: 1px solid #343a40; 
+  background: linear-gradient(135deg, #F2EFE5, #e9ecef); 
   border-radius: 10px;
-  width: 900px;
-  
+  width: 100%; 
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 0 15px; 
 }
+
+@media (min-width: 768px) {
+  .container.border {
+    padding: 0; 
+  }
+}
+
+
 
 
 .about .content {
@@ -1196,3 +1214,4 @@ section {
   text-align: center;
   font-size: 13px;
 }
+
