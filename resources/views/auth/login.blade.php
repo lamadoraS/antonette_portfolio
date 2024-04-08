@@ -12,60 +12,8 @@
     <link rel="stylesheet" href="login-form/css/bootstrap.min.css">
     <!-- Style -->
     <link rel="stylesheet" href="login-form/css/style.css">
+    <link rel="stylesheet" href="login-form/css/stylee.css">
 
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f8f9fa; 
-            padding: 8px 12px;
-            background-image: linear-gradient(135deg, #FFD9E2, #FFB6C1, #E76F8C, #BD3381, #000000);
-        }
-
-        .form-container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        @media (max-width: 576px) {
-            .form-container {
-                max-width: 100%;
-            }
-        }
-
-        /* Updated color */
-        .btn-primary {
-            background-color: #d43076;
-            border-color: #d43076;
-        }
-
-        .btn-primary:hover {
-            background-color: #b32c65;
-            border-color: #b32c65;
-        }
-
-        /* Updated color for hover effect on email address and password */
-        input[type="email"]:focus,
-        input[type="password"]:focus {
-            border-color: #d43076;
-            box-shadow: 0 0 0 0.2rem rgba(212, 48, 118, 0.25);
-        }
-
-        /* Updated color for "Forgot Password" text */
-        .forgot-pass {
-            color: #d43076;
-        }
-        .forgot-pass:hover {
-            color: #d43076;
-        }
-    </style>
 </head>
 <body>
 
@@ -103,7 +51,7 @@
                         <label class="form-check-label" for="remember"></label>
                         <div class="control__indicator"></div>
                     </label>
-                    <!-- Updated color for "Forgot Password" text -->
+                   
                     <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
                     @if (Route::has('password.request'))
                         <a class="btn btn-link" href="{{ route('password.request') }}"></a>
@@ -111,6 +59,9 @@
                 </div>
                 <input type="submit" value="Sign In" class="btn btn-pill text-white btn-block btn-primary">
             </form>
+            <div class="text-center mt-3">
+                <p class="account-text">Don't have an account? <a href="{{ route('register') }}" class="signup-link">Sign Up</a></p>
+            </div>
         </div>
     </div>
 

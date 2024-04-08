@@ -24,6 +24,9 @@ class ProfileController extends Controller
     public function create()
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
         return view('profile.create');
     }
 
@@ -69,6 +72,9 @@ class ProfileController extends Controller
     public function edit(Profile $profile)
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
         return view('Profile.edit', compact('profile'));
     }
 

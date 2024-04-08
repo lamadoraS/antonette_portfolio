@@ -27,7 +27,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('users', UserController::class);
+
 
 Route::resource('profiles',ProfileController::class);
 
@@ -42,6 +42,14 @@ Route::resource('webinars',WebinarController::class);
 Route::resource('blogs',BlogController::class);
 
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('users');
+
+Route::resource('users', UserController::class); 
+
+
+Route::middleware('role:admin')->group( function () {
+   
+    
+});
 
 
 

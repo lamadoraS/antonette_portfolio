@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa; 
+    padding: 8px 12px;
+    background-image: linear-gradient(135deg, #FFD9E2, #FFB6C1, #E76F8C, #BD3381, #000000);
+    color: #212529; /* Updated font color */
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #d43076; /* Updated border */
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        max-width: 100%;
+    }
+}
+
+/* Updated color */
+.btn-primary {
+    background-color: #d43076;
+    border-color: #d43076;
+}
+
+.btn-primary:hover {
+    background-color: #b32c65;
+    border-color: #b32c65;
+}
+
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #d43076;
+    box-shadow: 0 0 0 0.2rem rgba(212, 48, 118, 0.25);
+}
+
+
+.forgot-pass {
+    color: #d43076;
+}
+.forgot-pass:hover {
+    color: #d43076;
+}
+
+/* Updated link color */
+.signup-link {
+    color: #212529;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for the sign-up link */
+.signup-link:hover {
+    color: #d43076;
+}
+
+/* Updated color for the "Don't have an account?" text */
+.account-text {
+    color: #212529;
+}
+
+.forgot-pass:hover,
+        .signup-link:hover {
+            color: #212529;
+        }

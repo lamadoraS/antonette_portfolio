@@ -1,3 +1,6 @@
+@extends('Educational.layout')
+@extends('home')
+@section('table')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +16,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Attainment</h2>
+                <h2>Edit Educational</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('education.index') }}" enctype="multipart/form-data"> Back</a>
@@ -30,7 +33,7 @@
     <form action="{{route('education.update', $education->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-   
+        <div class="container-border">
          <div class="row">
             
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -82,3 +85,4 @@
 
 </body>
 </html>
+@endsection

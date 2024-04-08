@@ -6,15 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Antonette's Dashboard</title>
   <link rel="shortcut icon" type="image/png" href="../dashboard/assets/images/logos/icon.jpg" />
-  <link rel="stylesheet" href="../dashboard/assets/css/styles.min.css" />
+  <link rel="stylesheet" href='{{asset("dashboard/assets/css/styles.min.css")}}' />
   <style>
     .styled-text {
-      font-family: "Arial", sans-serif;
-      font-size: 25px;
+      font-family:'Times New Roman', Times, serif;
+      font-size: 30px;
       font-weight: bold;
       color: #333;
       text-align: center;
-      padding: 5px;
+      padding: 4px;
+      display: flex;
+      justify-content: center;
     }
 
     .left-sidebar,
@@ -31,9 +33,9 @@
     <aside class="left-sidebar">
       <!-- Sidebar scroll-->
       <div>
-        <div class="brand-logo d-flex align-items-center justify-content-between">
-
-          <span class="styled-text">Antonette</span>
+        <div class="brand-logo d-flex align-items-center justify-content-center">
+        
+          <span class="styled-text">{{ strtoupper(Auth::User()->role)}}</span>
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -47,7 +49,7 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('home')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -124,6 +126,7 @@
               </a>
             </li>
             
+            
           </ul>
         </nav>
         <!-- End Sidebar navigation -->
@@ -144,14 +147,13 @@
                 <i class="ti ti-menu-2"></i>
               </a>
             </li>
-
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-
+            <h5 class="styled-text" style="color: beige";>{{ ucwords(Auth::User()->name)}}</h5>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown" aria-expanded="false" data-target="#profileModal">
-                  <img src="login-form/images/profilepic.jpg" alt="" width="35" height="35" class="rounded-circle">
+                  <img src="assets/img/icon.jpg" alt="" width="35" height="35" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">
@@ -168,12 +170,18 @@
             </ul>
           </div>
         </nav>
+        
       </header>
       
       <!--  Header End -->
-
+      <div class="container-fluid">
+        <!--  Row 1 -->
+        <div class="row">
+         @yield('table')
+      </div>
     </div>
   </div>
+  
   <script src="../dashboard/assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="../dashboard/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../dashboard/assets/js/sidebarmenu.js"></script>

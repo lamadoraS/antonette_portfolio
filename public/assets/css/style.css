@@ -551,6 +551,7 @@ section {
   min-height: 500px;
 }
 
+
 @media (max-width: 991px) {
   .about .image {
     text-align: center;

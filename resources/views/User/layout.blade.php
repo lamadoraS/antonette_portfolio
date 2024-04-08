@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('User')</title>
+    
+    
+</head>
+<style>
+    .container-border {
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #ffcccc; 
+        }
+
+        .margin-tb {
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 576px) {
+            .container-border {
+                padding: 10px;
+            }
+
+            .margin-tb {
+                margin-bottom: 10px;
+            }
+        }
+        
+</style>

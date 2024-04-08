@@ -42,9 +42,11 @@
   <section id="hero" class="d-flex flex-column align-items-center justify-content-center">
   
     <h1>Hi, I'm Antonette</h1>
-    <h2>I am a Graphic Designer</h2>
+ 
+    <h2>Welcome to my portfolio</h2>
     <a href="#about" class="btn-get-started scrollto"><i class="bi bi-chevron-double-down"></i></a>
-  </section><!-- End Hero -->
+ 
+</section><!-- End Hero -->
 
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
@@ -52,12 +54,12 @@
      
        <div class="logo">
       
-        <h1><a href="#about">ANTONETTE</a></h1>
+        <h1><a href="#about"></a>ANTONETTE</h1>
         
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-     
+    
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
@@ -179,23 +181,21 @@
     </div>
 </section>
 
-
         <!-- End Experiences Section -->
-
-        <!-- ======= Webinar Section ======= -->
-        <section id="webinar" class="webinar section-bg">
+<!-- ======= Webinar Section ======= -->
+<section id="webinar" class="webinar section-bg">
     <div class="container border border-dark" style="padding: 20px;">
         <div class="section-title">
-            <h2> Webinars</h2>
+            <h2>Webinars</h2>
         </div>
         <div class="row">
             @foreach($webinar as $webinars)
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div class="card">
+                <div class="card" style="width: 100%;">
                     <div class="card-header">
                         <h3>{{ $webinars->title }}</h3>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="height: 200px;">
                         <p><strong>Agenda:</strong> {{ $webinars->agenda }}</p>
                         <p><strong>Host:</strong> {{ $webinars->host_name }}</p>
                         <p><strong>Date:</strong> {{ $webinars->date }}</p>
@@ -206,55 +206,53 @@
         </div>
     </div>
 </section>
-        <!-- End Webinar Details Section -->
+<!-- End Webinar Section -->
 
-        <!-- ======= Blog Single Section ======= -->
-        <section id="blog" class="blog section-bg">
-            <div class="container border border-dark" style="padding: 20px;">
-                <div class="section-title">
-                    <h2>Blog</h2>
-                </div>
-                @foreach($blog as $blogs)
-                <p>{{$blogs->title}}</p>
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="post-box">
-                            <div class="post-thumb">
-                                <img src="{{'storage/'. $blogs->image}}" class="img-fluid" alt=""
-                                    style="width: 40%; height:40%;">
-                            </div>
-                            <div class="article-content">
-                                <p>{{$blogs->content}}</p>
-                            </div>
-                        </div>
+
+       <!-- ======= Blog Single Section ======= -->
+<section id="blog" class="blog section-bg">
+    <div class="container border border-dark" style="padding: 20px;">
+        <div class="section-title">
+            <h2>Blog</h2>
+        </div>
+        <div class="row">
+            @foreach($blog as $blogs)
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="{{ 'storage/' . $blogs->image }}" class="card-img-top" alt="{{ $blogs->title }}">
+                    <div class="card-body" style="width: 100%; height: 200px;">
+                        <h5 class="card-title">{{ $blogs->title }}</h5>
+                        <p class="card-text">{{ $blogs->content }}</p>
                     </div>
                 </div>
-                @endforeach
             </div>
-        </section>
-        <!-- End Blog Single Section -->
+            @endforeach
+        </div>
+    </div>
+</section>
+<!-- End Blog Single Section -->
+
+
+       
 
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact section-bg">
             <div class="container border border-dark" style="padding: 20px;">
                 <div class="section-title">
                     <h2>Contact</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.
-                        Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit
-                        alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                   
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <div class="contact-about">
-                            <h3>Lonely</h3>
-                            <p>Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam
-                                phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat
-                                mauris nunc congue.</p>
+                            <h3>Antonette</h3>
+                            <p>"Feel free to reach out to me via the contact details provided below. Whether you have questions, suggestions, or just want to connect, I'm only a click away!
+                                 Your input is valuable and I look forward to hearing from you."</p>
                             <div class="social-links">
-                                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                                <a href="https://twitter.com/a_lozares" class="twitter"><i class="bi bi-twitter"></i></a>
+                                <a href="https://www.facebook.com/tonight.lamadoralozares" class="facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.instagram.com/antnttelzrs/" class="instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/antonette-lozares-4b47b0258/" class="linkedin"><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
@@ -262,15 +260,15 @@
                         <div class="info">
                             <div class="d-flex align-items-center">
                                 <i class="bi bi-geo-alt"></i>
-                                <p>A108 Adam Street<br>New York, NY 535022</p>
+                                <p>Brgy. Marangog<br>Hilongos Leyte, 6524</p>
                             </div>
                             <div class="d-flex align-items-center mt-4">
                                 <i class="bi bi-envelope"></i>
-                                <p>info@example.com</p>
+                                <p>antonette@gmail.com</p>
                             </div>
                             <div class="d-flex align-items-center mt-4">
                                 <i class="bi bi-phone"></i>
-                                <p>+1 5589 55488 55s</p>
+                                <p>09631157992</p>
                             </div>
                         </div>
                     </div>

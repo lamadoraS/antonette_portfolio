@@ -24,6 +24,9 @@ class WebinarController extends Controller
     public function create()
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
         return view('webinar.create');
     }
 
@@ -51,6 +54,10 @@ class WebinarController extends Controller
     public function edit(webinar $webinar)
     {
         //
+        
+         if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
         return view('webinar.edit', compact('webinar'));
     }
 

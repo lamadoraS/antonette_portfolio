@@ -14,6 +14,7 @@ class FrontendController extends Controller
     {
         //
        
+     
 
         $profile = DB::table('profiles')->get();
 
@@ -26,6 +27,8 @@ class FrontendController extends Controller
         $webinar = DB::table('webinars')->get();
 
         $blog = DB::table('blogs')->get();
+
+       
 
         return view('welcome',compact('profile','skill','education','experience','webinar','blog'));
 

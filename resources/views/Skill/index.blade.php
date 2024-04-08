@@ -1,3 +1,6 @@
+@extends('Skill.layout')
+@extends('home')
+@section('table')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +8,7 @@
     <title>Skills</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .container-border {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            margin-top: 20px;
-            background-color: #ffcccc; 
-        }
 
-        .margin-tb {
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 <body>
 
@@ -27,9 +18,11 @@
             <div class="pull-left">
                 <h2>Skills</h2>
             </div>
+            @if(auth()->user()->role != 'spectator')
             <div class="pull-right mb-2">
                 <a class="btn btn-success" href="{{ route('skills.create') }}">Add Skill</a>
             </div>
+            @endif
         </div>
     </div>
 
@@ -46,7 +39,9 @@
                     <th>#</th>
                     <th>Skill Name</th>
                     <th>Percentage</th>
+                    @if(auth()->user()->role != 'spectator')
                     <th>Action</th>
+                    @endif
                 </tr>
             </thead>
             <tbody>
@@ -55,6 +50,7 @@
                     <td>{{ ++$i }}</td>
                     <td>{{ $skill->skill_name }}</td>
                     <td>{{ $skill->percentage }}</td>
+                    @if(auth()->user()->role != 'spectator')
                     <td>
                         <form action="{{ route('skills.destroy', $skill->id) }}" method="POST">
                             <a class="btn btn-primary btn-sm" href="{{ route('skills.edit', $skill->id) }}">Edit</a>
@@ -63,6 +59,7 @@
                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                         </form>
                     </td>
+                    @endif
                 </tr>
                 @endforeach
             </tbody>
@@ -76,3 +73,4 @@
 
 </body>
 </html>
+@endsection
