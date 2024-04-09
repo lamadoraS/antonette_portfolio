@@ -24,9 +24,7 @@ class ProfileController extends Controller
     public function create()
     {
         //
-        if(auth()->user()->role =="spectator"){
-            return abort(403, 'Denied Access');
-        }
+       
         return view('profile.create');
     }
 
@@ -36,25 +34,8 @@ class ProfileController extends Controller
     public function store(Request $request): RedirectResponse
     {
         //
-        $data = $request->validate([
-            'image' => 'required',
-            'title' => 'required',
-            'name' => 'required',
-            'birthday' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'address' => 'required',
-            'age' => 'required',
-            'degree' => 'required',
-        ]);
-   
-        if($request->hasFile('image')){
-            $image = $request->file('image');
-            $imagePath = $image->store('img', 'public');
-            $data['image'] = $imagePath; 
-        }
-        
-        Profile::create($data);
+       
+        Profile::create($request->all());
         return redirect()->route('profiles.index');
     }
 
@@ -72,9 +53,7 @@ class ProfileController extends Controller
     public function edit(Profile $profile)
     {
         //
-        if(auth()->user()->role =="spectator"){
-            return abort(403, 'Denied Access');
-        }
+       
         return view('Profile.edit', compact('profile'));
     }
 
@@ -84,27 +63,13 @@ class ProfileController extends Controller
     public function update(Request $request, Profile $profile): RedirectResponse
     {
         //
-        $data = $request->validate([
-            'title' => 'required',
-            'name' => 'required',
-            'birthday' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'address' => 'required',
-            'age' => 'required',
-            'degree' => 'required',
-        ]);
-   
-        if($request->hasFile('image')){
-            $image = $request->file('image');
-            $imagePath = $image->store('img', 'public');
-            $data['image'] = $imagePath; 
-        }
-        $profile->update($data);
+        
+        $profile->update($request->all());
 
        return redirect()->route('profiles.index');
 
     }
+    
 
     /**
      * Remove the specified resource from storage.
