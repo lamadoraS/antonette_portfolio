@@ -5,7 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EducationalController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\profileController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebinarController;
@@ -31,7 +31,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-Route::resource('profiles',profileController::class);
+Route::resource('profiles',ProfileController::class);
+
 Route::resource('skills',SkillController::class);
 
 Route::resource('education',EducationalController::class);
