@@ -25,7 +25,7 @@ class BlogController extends Controller
     {
         //
         
-        return view('blog.create');
+        return view('Blog.create');
     }
 
     /**
@@ -67,7 +67,7 @@ class BlogController extends Controller
     {
         //
         
-        return view('blog.edit', compact('blog'));
+        return view('Blog.edit', compact('blog'));
     }
 
     /**

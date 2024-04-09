@@ -26,7 +26,7 @@ class EducationalController extends Controller
     {
         //
         
-        return view('educational.create');
+        return view('Educational.create');
     }
 
     /**
@@ -55,7 +55,7 @@ class EducationalController extends Controller
     {
         //
        
-        return view('educational.edit', compact('education'));
+        return view('Educational.edit', compact('education'));
     }
 
     /**

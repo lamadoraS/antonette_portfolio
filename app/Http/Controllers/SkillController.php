@@ -26,7 +26,7 @@ class SkillController extends Controller
     {
         //
      
-        return view('skill.create');
+        return view('Skill.create');
     }
 
     /**

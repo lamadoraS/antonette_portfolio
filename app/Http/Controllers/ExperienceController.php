@@ -26,7 +26,7 @@ class ExperienceController extends Controller
     {
         //
        
-        return view('experiences.create');
+        return view('Experiences.create');
     }
 
     /**
@@ -67,7 +67,7 @@ class ExperienceController extends Controller
     {
         //
         
-        return view('experiences.edit', compact('experience'));
+        return view('Experiences.edit', compact('experience'));
     }
 
     /**
