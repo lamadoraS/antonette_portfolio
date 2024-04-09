@@ -13,7 +13,7 @@ class FrontendController extends Controller
     public function index()
     {
         //
-        $user = DB::table('users')->where('role','admin')->get();
+       
      
 
         $profile = DB::table('profiles')->get();
@@ -30,7 +30,7 @@ class FrontendController extends Controller
 
        
 
-        return view('welcome',compact('user','profile','skill','education','experience','webinar','blog'));
+        return view('welcome',compact('profile','skill','education','experience','webinar','blog'));
 
        
 
