@@ -39,7 +39,21 @@ h5,
 h6 {
   font-family: "Playfair Display", serif;
 }
+.container.border {
+  border: 1px solid #343a40; 
+  background: linear-gradient(135deg, #F2EFE5, #e9ecef); 
+  border-radius: 10px;
+  width: 100%; 
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 0 15px; 
+}
 
+@media (min-width: 768px) {
+  .container.border {
+    padding: 30px; 
+  }
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -482,21 +496,7 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.container.border {
-  border: 1px solid #343a40; 
-  background: linear-gradient(135deg, #F2EFE5, #e9ecef); 
-  border-radius: 10px;
-  width: 100%; 
-  max-width: 900px; 
-  margin: 0 auto; 
-  padding: 0 15px; 
-}
 
-@media (min-width: 768px) {
-  .container.border {
-    padding: 30px; 
-  }
-}
 
 
 .about .content {
