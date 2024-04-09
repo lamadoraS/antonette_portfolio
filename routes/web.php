@@ -30,8 +30,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-Route::resource('profiles',ProfileController::class);
 
+Route::resource('profiles',profileController::class);
 Route::resource('skills',SkillController::class);
 
 Route::resource('education',EducationalController::class);
