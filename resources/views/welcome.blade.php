@@ -52,12 +52,17 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#skills">Skills</a></li>
-          <li><a class="nav-link scrollto" href="#educational">Educational Attainment</a></li>
-          <li><a class="nav-link scrollto" href="#experiences">Experiences</a></li>
-          <li><a class="nav-link scrollto" href="#webinar">Webinar</a></li>
-          <li><a class="nav-link scrollto" href="#blog">Blog</a></li>
+         <li class="dropdown"><a href="#"><span>Resume</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#educational">Educational Attainment</a></li>
+              <li><a href="#experiences">Experiences</a></li>
+              <li><a href="#webinar">Webinar</a></li>
+              <li><a href="#blog">Blog</a></li>
+            </ul>
+          </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li><a class="nav-link scrollto" href="{{ route('login') }}">Log In</a></li>
         </ul>
@@ -100,6 +105,7 @@
       </div>
     </section>
     <!-- End About Section -->
+    
 
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
@@ -218,66 +224,93 @@
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section-bg">
-      <div class="container border border-dark" style="padding: 20px;">
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="contact-about">
-              <h3>Antonette</h3>
-              <p>"Feel free to reach out to me via the contact details provided below. Whether you have questions, suggestions, or just want to connect, I'm only a click away!
-                   Your input is valuable and I look forward to hearing from you."</p>
-              <div class="social-links">
-                <a href="https://twitter.com/a_lozares" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="https://www.facebook.com/tonight.lamadoralozares" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.instagram.com/antnttelzrs/" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/antonette-lozares-4b47b0258/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="info">
-              <div class="d-flex align-items-center">
-                <i class="bi bi-geo-alt"></i>
-                <p>Brgy. Marangog<br>Hilongos Leyte, 6524</p>
-              </div>
-              <div class="d-flex align-items-center mt-4">
-                <i class="bi bi-envelope"></i>
-                <p>antonette@gmail.com</p>
-              </div>
-              <div class="d-flex align-items-center mt-4">
-                <i class="bi bi-phone"></i>
-                <p>09631157992</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-              </div>
-              <div class="form-group mt-3">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+  <div class="container border border-dark" style="padding: 20px;">
+    <div class="section-title">
+      <h2>Contact</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="contact-about">
+          <h3>Antonette</h3>
+          <p>"Feel free to reach out to me via the contact details provided below. Whether you have questions, suggestions, or just want to connect, I'm only a click away! Your input is valuable and I look forward to hearing from you."</p>
+          <div class="social-links">
+            <a href="https://twitter.com/a_lozares" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/tonight.lamadoralozares" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/antnttelzrs/" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/antonette-lozares-4b47b0258/" class="linkedin"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
       </div>
-    </section>
-    <!-- End Contact Section -->
+      <div class="col-lg-4">
+        <div class="col-lg-4">
+          <div class="info">
+            <div class="d-flex align-items-center mt-4">
+              <a href="https://maps.app.goo.gl/e7ngZ7f5bgZnYW1A9" target="_blank">
+                <i class="bi bi-geo-alt"></i>
+              </a>
+              <p><a href="https://maps.google.com/?q=Brgy.+Marangog+Hilongos+Leyte+6524" target="_blank">Brgy. Marangog Hilongos Leyte, 6524</a></p>
+            </div>
+            <div class="d-flex align-items-center mt-4">
+              <a href="mailto:a.lozares@mlgcl.edu.ph">
+                <i class="bi bi-envelope"></i>
+              </a>
+              <p><a href="mailto:a.lozares@mlgcl.edu.ph">a.lozares@mlgcl.edu.ph</a></p>
+            </div>
+            <div class="d-flex align-items-center mt-4">
+              <a href="tel:+639631157992">
+                <i class="bi bi-phone"></i>
+              </a>
+              <p><a href="tel:+639631157992">09631157992</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <form action="{{ route('contacts.store') }}" method="POST" enctype="multipart/form-data" class="single-form quate-form wow fadeInUp" data-toggle="validator" id="contactForm">
+          @csrf
+          <div id="msgSubmit" class="h3 text-center hidden"></div>
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <label for="first_name">First Name</label>
+              <input name="first_name" class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <label for="last_name">Last Name</label>
+              <input name="last_name" class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
+            </div>
+            <div class="col-sm-12">
+              <label for="email">Email</label>
+              <input name="email" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+            </div>
+            <div class="col-sm-12">
+              <label for="message">Message</label>
+              <textarea name="message" class="form-control contact-message" id="message" rows="10" placeholder="Your Message" required></textarea>
+            </div>
+            <!-- Subject Button -->
+            <div class="btn-form col-sm-12">
+              <div class="text-center">
+                <button type="submit" class="btn btn-fill btn-primary" id="form-submit">Send Message</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    
+    alert("Are you sure you want to send this message?");
+  });
+  
+</script>
+
+
+<!-- End Contact Section -->
+
   </main><!-- End #main -->
 
   <a href="" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

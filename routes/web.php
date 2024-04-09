@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EducationalController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\FrontendController;
@@ -45,11 +46,9 @@ Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name
 
 Route::resource('users', UserController::class); 
 
+Route::resource('contacts', ContactController::class); 
 
-Route::middleware('role:admin')->group( function () {
-   
-    
-});
+
 
 
 

@@ -494,28 +494,28 @@ section {
 
 @media (min-width: 768px) {
   .container.border {
-    padding: 0; 
+    padding: 30px; 
   }
 }
 
 
-
-
 .about .content {
-  padding: 30px 0;
-  
+  padding: 30px;
+  background-color: #ffffff; 
+  border-radius: 10px; 
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .about .content h3 {
   font-weight: 500;
   font-size: 34px;
   color: #2c4964;
-  padding:10px;
-  
+  padding: 10px;
+  margin-bottom: 20px; 
 }
 
 .about .content p {
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .about .content .count-box {
@@ -562,7 +562,6 @@ section {
 .about .content .count-box a:hover {
   color: #6b96be;
 }
-
 .about .image {
   background: url("../img/profilepic.jpg") center center no-repeat;
   background-size: cover;

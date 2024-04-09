@@ -7,23 +7,7 @@
   <title>Antonette's Dashboard</title>
   <link rel="shortcut icon" type="image/png" href="../dashboard/assets/images/logos/icon.jpg" />
   <link rel="stylesheet" href='{{asset("dashboard/assets/css/styles.min.css")}}' />
-  <style>
-    .styled-text {
-      font-family:'Times New Roman', Times, serif;
-      font-size: 30px;
-      font-weight: bold;
-      color: #333;
-      text-align: center;
-      padding: 4px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .left-sidebar,
-    .app-header {
-      background: linear-gradient(135deg, #ffffff, #FFD9E2, #FFB6C1, #E76F8C, #BD3381, #000000);
-    }
-  </style>
+  <link rel="stylesheet" href="dashboard/assets/css/styleee.css"> 
 </head>
 
 <body>
@@ -118,7 +102,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{route('home')}}" aria-expanded="false">
+              <a class="sidebar-link" href="{{route('contacts.index')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-phone"></i>
                 </span>
