@@ -81,7 +81,7 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, blog $blog)
+    public function update(Request $request, Blog $blog)
     {
         //
         $data = $request->validate([
