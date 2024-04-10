@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\blog;
+use App\Models\Blog;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -14,7 +14,7 @@ class BlogController extends Controller
     public function index()
     {
         //
-        $blog = blog::get();
+        $blog = Blog::get();
         return view('Blog.index',compact('blog'))->with('i');
     }
 
@@ -52,7 +52,7 @@ class BlogController extends Controller
             $data['image'] = $imagePath; 
         }
 
-        blog::create($data);
+        Blog::create($data);
         return redirect()->route('blogs.index');
     }
 
@@ -67,7 +67,7 @@ class BlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(blog $blog)
+    public function edit(Blog $blog)
     {
         //
         if(auth()->user()->role =="spectator"){
@@ -105,7 +105,7 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(blog $blog)
+    public function destroy(Blog $blog)
     {
         //
         if(auth()->user()->role =="spectator"){

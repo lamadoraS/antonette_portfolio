@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\webinar;
+use App\Models\Webinar;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -14,7 +14,7 @@ class WebinarController extends Controller
     public function index()
     {
         //
-        $webinar = webinar::get();
+        $webinar = Webinar::get();
         return view('Webinar.index',compact('webinar'))->with('i');
     }
 
@@ -36,7 +36,7 @@ class WebinarController extends Controller
     public function store(Request $request):RedirectResponse
     {
         //
-        webinar::create($request->all());
+        Webinar::create($request->all());
         return redirect()->route('webinars.index');
     }
 
@@ -51,7 +51,7 @@ class WebinarController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(webinar $webinar)
+    public function edit(Webinar $webinar)
     {
         //
         
@@ -64,7 +64,7 @@ class WebinarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, webinar $webinar)
+    public function update(Request $request, Webinar $webinar)
     {
         //
         $webinar->update($request->all());
@@ -75,7 +75,7 @@ class WebinarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(webinar $webinar)
+    public function destroy(Webinar $webinar)
     {
         //
         $webinar->delete();
