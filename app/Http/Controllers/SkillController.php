@@ -25,6 +25,11 @@ class SkillController extends Controller
     public function create()
     {
         //
+         
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
+       
      
         return view('Skill.create');
     }
@@ -53,7 +58,9 @@ class SkillController extends Controller
      */
     public function edit(Skills $skill)
     {
-        
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
         return view('Skill.edit', compact('skill'));
         //
     }
@@ -75,6 +82,9 @@ class SkillController extends Controller
     public function destroy(Skills $skill)
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
         $skill->delete();
         return redirect()->route('skills.index');
     }

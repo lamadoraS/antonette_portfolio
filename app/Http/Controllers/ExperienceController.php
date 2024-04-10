@@ -25,6 +25,10 @@ class ExperienceController extends Controller
     public function create()
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
+       
        
         return view('Experiences.create');
     }
@@ -66,6 +70,10 @@ class ExperienceController extends Controller
     public function edit(Experience $experience)
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
+       
         
         return view('Experiences.edit', compact('experience'));
     }
@@ -101,6 +109,10 @@ class ExperienceController extends Controller
     public function destroy(Experience $experience)
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
+       
         $experience->delete();
         return redirect()->route('experiences.index');
     }

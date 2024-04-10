@@ -24,6 +24,10 @@ class BlogController extends Controller
     public function create()
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
+       
         
         return view('Blog.create');
     }
@@ -66,6 +70,10 @@ class BlogController extends Controller
     public function edit(blog $blog)
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
+       
         
         return view('Blog.edit', compact('blog'));
     }
@@ -100,6 +108,10 @@ class BlogController extends Controller
     public function destroy(blog $blog)
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
+       
         $blog->delete();
         return redirect()->route('blogs.index');
     }

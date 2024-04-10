@@ -25,7 +25,10 @@ class EducationalController extends Controller
     public function create()
     {
         //
-        
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
+       
         return view('Educational.create');
     }
 
@@ -54,6 +57,10 @@ class EducationalController extends Controller
     public function edit(Education $education)
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
+       
        
         return view('Educational.edit', compact('education'));
     }
@@ -76,6 +83,10 @@ class EducationalController extends Controller
     public function destroy(Education $education)
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
+       
         $education->delete();
         return redirect()->route('education.index');
     }

@@ -79,6 +79,10 @@ class ContactController extends Controller
     public function destroy(Contact $contact)
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
+       
         $contact->delete();
   
         return redirect()->route('contacts.index');
