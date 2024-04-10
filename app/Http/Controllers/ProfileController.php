@@ -28,7 +28,7 @@ class ProfileController extends Controller
             return abort(403, 'Denied Access');
         }
        
-        return view('profile.create');
+        return view('Profile.create');
     }
 
     /**

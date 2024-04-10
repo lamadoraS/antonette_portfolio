@@ -27,7 +27,7 @@ class WebinarController extends Controller
         if(auth()->user()->role =="spectator"){
             return abort(403, 'Denied Access');
         }
-        return view('webinar.create');
+        return view('Webinar.create');
     }
 
     /**
@@ -58,7 +58,7 @@ class WebinarController extends Controller
          if(auth()->user()->role =="spectator"){
             return abort(403, 'Denied Access');
         }
-        return view('webinar.edit', compact('webinar'));
+        return view('Webinar.edit', compact('webinar'));
     }
 
     /**
