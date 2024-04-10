@@ -54,16 +54,9 @@
                         <td>{{ $users->name }}</td>
                         <td>{{ $users->email }}</td>
                         <td>
-                            @if(auth()->user()->role == 'admin')
+                        @if(auth()->user()->role == 'admin' || (auth()->user()->role == 'spectator' && auth()->user()->id == $users->id))
                                 <a class="btn btn-primary btn-sm" href="{{ route('users.edit', $users->id) }}">Edit</a>
                                 
-                                <form action="{{ route('users.destroy', $users->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                </form>
-                            @elseif(auth()->user()->id == $users->id)
-                                <a class="btn btn-primary btn-sm" href="{{ route('users.edit', $users->id) }}">Edit</a>
                                 <form action="{{ route('users.destroy', $users->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')

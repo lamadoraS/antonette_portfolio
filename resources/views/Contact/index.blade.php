@@ -37,7 +37,9 @@
                 </thead>
                 <tbody>
                     @foreach ($contacts as $contact)
+                  
                     <tr>
+                    @if(auth()->user()->role != 'spectator')
                         <td>{{ ++$i }}</td>
                         <td>{{ $contact->first_name }}</td>
                         <td>{{ $contact->last_name }}</td>
@@ -71,7 +73,9 @@
                                 </div>
                             </form>
                         </td>
+                       
                     </tr>
+                    @endif
                     @endforeach
                 </tbody>
             </table>
