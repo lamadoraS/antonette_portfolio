@@ -101,9 +101,13 @@
                   <li><strong>Degree:</strong> {{ ucwords($profiles->degree) }}</li>
                 </ul>
                 @endforeach
+                
               </div>
+              
             </div>
+            
           </div>
+          
         </div>
       </div>
     </section>

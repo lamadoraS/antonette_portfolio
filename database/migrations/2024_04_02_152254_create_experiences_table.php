@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->float('experience_year');
+            $table->string('experience_year');
             $table->string('details');
             $table->string('image')->nullable();
             $table->timestamps();
