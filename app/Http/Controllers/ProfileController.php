@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
+use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+       
         $profiles = Profile::get();
         return view('Profile.index',compact('profiles'))->with('i');
     }
@@ -87,4 +88,5 @@ class ProfileController extends Controller
         //
         
     }
+
 }

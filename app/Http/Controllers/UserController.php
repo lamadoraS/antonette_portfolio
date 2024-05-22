@@ -14,9 +14,9 @@ class UserController extends Controller
     public function index()
     {
         //
-       $user =  User::get();
-
+        $user =  User::get(); 
         return view('User.index', compact('user'))->with('i');
+    
     }
 
     /**
@@ -25,6 +25,9 @@ class UserController extends Controller
     public function create()
     {
         //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
         return view('User.create');
     }
 
@@ -50,10 +53,20 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(User $user)
-    {
+{
+    $authenticatedUser = auth()->user();
 
-        return view('User.edit', compact('user'));
-    }   
+   
+    if ($authenticatedUser->role == 'spectator') {
+       
+        if ($authenticatedUser->id != $user->id) {
+            abort(403, 'Forbidden');
+        }
+    } 
+
+    return view('User.edit', compact('user'));
+}
+
 
   
     public function update(Request $request, User $user): RedirectResponse
@@ -61,6 +74,7 @@ class UserController extends Controller
        $data =  $request->validate([
            
             'email' => 'required',
+            'password' => 'nullable|string|min:8|confirmed',
          
         ]);
        

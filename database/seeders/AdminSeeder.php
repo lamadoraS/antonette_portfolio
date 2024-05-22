@@ -33,9 +33,7 @@ class AdminSeeder extends Seeder
             'email' => 'antonette@gmail.com',
             'phone' => '09631157992',
             'address' => 'Marangog Hilongos, Leyte',
-            'age' => '20',
             'degree' => 'graduate',
-            
             ]
              ]);
 

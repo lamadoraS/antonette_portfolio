@@ -57,23 +57,23 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Password:</strong>
-                            <input type="password" name="password" value="{{ $user->password }}" class="form-control" placeholder="Edit Password">
-                            @error('password')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                            @enderror
+                        <label for="password">Password</label>
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Confirm Password:</strong>
-                            <input type="password" name="password_confirmation" value="{{ $user->password }}" class="form-control" placeholder="Edit Password">
-                            @error('password')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                            @enderror
+                        <label for="password-confirm">Confirm Password</label>
+                    <input id="password-confirm" type="password" class="form-control"  name="password_confirmation" required autocomplete="new-password">
                         </div>
                     </div>
-                   
+                    
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <button type="submit" class="btn btn-primary ml-3">Submit</button>

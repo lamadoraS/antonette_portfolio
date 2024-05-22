@@ -9,6 +9,6 @@ class Profile extends Model
 {
     protected $table = 'profiles';
     protected $primaryKey = 'id';
-    protected $fillable = ['title','name', 'birthday','email','phone','address','age','degree'];
+    protected $fillable = ['title','name', 'birthday','email','phone','address','degree'];
     use HasFactory;
 }

@@ -36,7 +36,6 @@
                         <th scope="col">Email Address</th>
                         <th scope="col">Phone Number</th>
                         <th scope="col">Address</th>
-                        <th scope="col">Age</th>
                         <th scope="col">Degree</th>
                         @if(auth()->user()->role != 'spectator')
                             <th scope="col" width="200px">Action</th>
@@ -53,7 +52,6 @@
                         <td>{{ $prof->email }}</td>
                         <td>{{ $prof->phone }}</td>
                         <td>{{ $prof->address }}</td>
-                        <td>{{ $prof->age }}</td>
                         <td>{{ $prof->degree }}</td>
                         @if(auth()->user()->role != 'spectator')
                             <td>

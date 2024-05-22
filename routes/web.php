@@ -31,6 +31,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
+
+
+Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('users');
+
+
+
+Route::resource('contacts', ContactController::class); 
+
+Route::middleware('role:admin')->group(function() {
+Route::resource('users', UserController::class); 
 Route::resource('profiles',ProfileController::class);
 
 Route::resource('skills',SkillController::class);
@@ -42,13 +52,8 @@ Route::resource('experiences',ExperienceController::class);
 Route::resource('webinars',WebinarController::class);
 
 Route::resource('blogs',BlogController::class);
-
-Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('users');
-
-Route::resource('users', UserController::class); 
-
-Route::resource('contacts', ContactController::class); 
-
+}
+);
 
 
 

@@ -53,6 +53,7 @@
                         <td>{{ $users->role }}</td>
                         <td>{{ $users->name }}</td>
                         <td>{{ $users->email }}</td>
+                        
                         <td>
                         @if(auth()->user()->role == 'admin' || (auth()->user()->role == 'spectator' && auth()->user()->id == $users->id))
                                 <a class="btn btn-primary btn-sm" href="{{ route('users.edit', $users->id) }}">Edit</a>

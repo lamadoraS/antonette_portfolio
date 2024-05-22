@@ -94,15 +94,6 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>Age:</strong>
-                            <input type="number" name="age" value="{{ $profile->age }}" class="form-control" placeholder="Edit Age">
-                            @error('age')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
                             <strong>Degree:</strong>
                             <input type="text" name="degree" value="{{ $profile->degree }}" class="form-control" placeholder="Enter Degree">
                             @error('date')
